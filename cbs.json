@@ -1,5 +1,5 @@
 {
-  "mode": "production",
+  "mode": "development",
   "entry": {
     "hello": "./src/components/HelloCerberus.js"
   }
