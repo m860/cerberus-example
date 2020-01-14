@@ -13,7 +13,7 @@ export default function () {
             backgroundColor: '#cfdf86',
         }}>
             <Text style={{fontWeight: 'bold', textAlign: 'center'}}>加载cloud cerberus组件</Text>
-            <Text style={{color: '555555'}}>
+            <Text style={{color: '#555555'}}>
                 我部署在Cloud Cerberus中
             </Text>
         </View>
