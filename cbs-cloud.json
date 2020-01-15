@@ -1,6 +1,0 @@
-{
-  "mode": "production",
-  "entry": {
-    "hello": "./src/components/HelloCloudCerberus.js"
-  }
-}
