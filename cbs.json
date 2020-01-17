@@ -1,6 +1,7 @@
 {
   "mode": "production",
   "entry": {
-    "hello": "./src/components/HelloCerberus.js"
+    "hello": "./src/components/HelloCerberus.js",
+    "preload": "./src/components/PreloadWidget.js"
   }
 }

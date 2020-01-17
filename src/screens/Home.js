@@ -4,7 +4,12 @@
  */
 import * as React from 'react';
 import {ScrollView, SafeAreaView, Text, Button, View} from 'react-native';
-import {useCerberus, useCloudCerberus} from '@m860/cerberus';
+import {useCerberus, useCloudCerberus, preloadCloud} from '@m860/cerberus';
+import type {PreloadOption} from '@m860/cerberus';
+
+export const queryPreloadWidget = (arr: Array<string>) => {
+    return arr.find((f: string) => f.indexOf('preload') >= 0);
+};
 
 export default function ({navigation}) {
     const [, defined] = useCerberus({
@@ -28,6 +33,20 @@ export default function ({navigation}) {
         }
     }, [defined2]);
 
+    React.useEffect(() => {
+        //preload widget `PreloadWidget`
+        const opt: PreloadOption = {
+            secret: 'ZjBjYjc1MzEtMzVlNS0xMWVhLTkwMTEtZTVjNDkzZjcxZjk5',
+            queryEntry: queryPreloadWidget,
+        };
+        preloadCloud(opt).then((err: ?Error) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log(`PreloadWidget预加载完成完成`);
+            }
+        });
+    }, []);
 
     return (
         <SafeAreaView>
@@ -50,6 +69,8 @@ export default function ({navigation}) {
                 {renderCloudHello()}
                 <Button title="Memory Cache"
                         onPress={() => navigation.navigate('MemoryCache')}/>
+                <Button title="Show Preload Widget Cache"
+                        onPress={() => navigation.navigate('ShowPreloadWidget')}/>
             </ScrollView>
         </SafeAreaView>
     );

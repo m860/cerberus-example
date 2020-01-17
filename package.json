@@ -11,7 +11,7 @@
     "cbs": "cbs start cbs.json"
   },
   "dependencies": {
-    "@m860/cerberus": "1.2.0",
+    "@m860/cerberus": "git+https://github.com/m860/cerberus.git#develop",
     "@react-native-community/masked-view": "^0.1.6",
     "graphql": "^14.5.8",
     "react": "16.9.0",
